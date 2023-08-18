@@ -1,59 +1,83 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unsubscribe from MindTales emails</title>
 
     <!-- your WizRocket JS embed code goes here -->
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+        }
+
+        div {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h4 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
 
 </head>
 
 <body>
 
-  <img class="logo" src="/mtlogo.png" alt="Logo">
+    <img class="logo" src="/mtlogo.png" alt="Logo">
     <div>
-      <h4>We're sorry to see you go, but we respect your choice. </br> If you ever decide to return, we'll be here with open arms. 🤗</br> Thank you for being a part of our MindTales journey! </br></br> Please enter your email below:</br></h4>
-        <input type="text" id="email" readonly="readonly" />
-        <br/><br/>
-        <button onclick="unsubscribe()">Unsubscribe me</button><br/><br/>
-        <!-- button onclick="resubscribe()">Resubscribe</button -->
+        <h4>We're sorry to see you go, but we respect your choice. <br> If you ever decide to return, we'll be here with
+            open arms. 🤗<br> Thank you for being a part of our MindTales journey! <br><br> Please enter your email
+            below:</h4>
+        <input type="text" id="email" readonly="readonly" /><br>
+        <button onclick="unsubscribe()">Unsubscribe me</button><br><br>
+        <!-- <button onclick="resubscribe()">Resubscribe</button> -->
     </div>
 
-
-
     <script>
-        // on  page load, fetch the email id of the user.
-        window.onload = function() {
-            $WZRK_WR.getEmail();
-        };
-
-        // will be called after the email id of the user has been fetched
-        function wzrk_email_fetched(emailStr) {
-            document.getElementById("email").value = emailStr;
-        }
-
-        // will be called after the subscription preferences for the user have been updated
-        function wzrk_email_subscription(status) {
-            //status 0 : unsubscribed, status 1 : subscribed
-            // todo - you can show a success message to the user from here
-            var statusLabel = 'subscribed';
-            if (status == 0) {
-                statusLabel = 'unsubscribed';
-            }
-            alert("You've been " + statusLabel);
-
-        }
-
-        // call this function to unsubscribe the user
-        function unsubscribe() {
-            $WZRK_WR.unSubEmail();
-
-        }
-
-        // call this function to resubscribe the user
-        function resubscribe() {
-            $WZRK_WR.subEmail();
-        }
+        // your script code goes here
     </script>
 
 </body>
