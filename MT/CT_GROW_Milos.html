@@ -36,15 +36,8 @@
         }
 
         function triggerEvent() {
-            var eventName = document.getElementById('eventName').value;
-            
-            if (eventName === "GROWTH Enrolled") {
-                clevertap.event.push("GROWTH Enrolled", {});
-                console.log('Event Triggered : GROWTH Enrolled');
-            } else {
-                clevertap.event.push(eventName, {});
-                console.log('Event Triggered : ' + eventName);
-            }
+            clevertap.event.push("GROWTH Enrolled", {});
+            console.log('Event Triggered : GROWTH Enrolled');
         }
     </script>
 </head>
@@ -57,9 +50,6 @@
             <br><br>
             <label for="email">Enter Email:</label><br>
             <input type="text" name="email" id="email" />
-            <br><br>
-            <label for="eventName">Enter Event Name:</label><br>
-            <input type="text" name="eventName" id="eventName" />
             <br><br>
             <input type="button" class="magicButton" value="Enroll now" onclick="onLoginClick()" />
             <input type="button" class="magicButton" value="Trigger Event" onclick="triggerEvent()" />
