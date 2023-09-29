@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title> MT GROW Form CleverTap Test</title>
+    <title> MindTales GROW Form CleverTap Test</title>
  
 
    <script type="text/javascript">
@@ -37,18 +37,7 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
                       
                     }
                 });
-                alert('User Login : ' + name);
-            } else {
-                clevertap.onUserLogin.push({
-                    "Site": {
-                        "Name": "Akshay Bhange",
-                        "Email": "akshay.bhange@clevertap.com",
-                        "Phone": "+919876543210",
-                        "Gender": "M",
-                    }
-                });
-                alert('Default User Login');
-            }
+               
         }
         function triggerEvent() {
             var event = document.getElementById('event').value;
@@ -69,7 +58,7 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
 
 <body>
     <center>
-        <img src="https://i.ytimg.com/vi/hMeD22KR6V8/maxresdefault.jpg" width="270" height="150">
+      
 
         <form onsubmit="onLoginClick()">
             <label for="name">Enter name:</label><br>
@@ -78,14 +67,10 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
             <label for="email">Enter Email:</label><br>
             <input type="text" name="email" id="email" />
             <br><br>
-          
+             <form onsubmit="triggerEvent()">
             <input type="submit" class="magicButton" value="Enroll now" />
         </form>
-        <form onsubmit="triggerEvent()">
-            <label for="event">Enter event Name:</label>
-            <input type="text" name="event" id="event" />
-            <input type="submit" class="magicButton" />
-        </form>
+        
         <!-- <button type="button" id="magicButton" class="magicButton" onclick="onMagicButtonClick()">Magic Button</button> -->
     </center>
 
