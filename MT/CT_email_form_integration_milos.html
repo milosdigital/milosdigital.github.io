@@ -29,7 +29,7 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
         function onLoginClick() {
             var name = document.getElementById('name').value;
             var email = document.getElementById('email').value;
-             if (name != '' && email != '' && name != '') {
+             {
                 clevertap.onUserLogin.push({
                     "Site": {
                         "Name": name,
