@@ -32,18 +32,16 @@
                 }
             });
 
+            // Trigger the event after capturing user info
+            triggerEvent();
+
             alert('Thank you for registering, we will reach out to you soon! ' + name);
         }
 
         function triggerEvent() {
             clevertap.event.push("GROWTH Enrolled", {});
-            console.log('Event Triggered : GROWTH Enrolled');
+            console.log('Event Triggered: GROWTH Enrolled');
         }
-
-        // Automatically trigger the event when the page loads
-        window.onload = function() {
-            triggerEvent();
-        };
     </script>
 </head>
 
