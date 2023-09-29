@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MindTales GROW Form CleverTap Test</title>
+
+    <script type="text/javascript">
+        var clevertap = { event: [], profile: [], account: [], onUserLogin: [], notifications: [], privacy: [] };
+        clevertap.account.push({ "id": "8WW-K84-Z96Z" });
+        clevertap.privacy.push({ optOut: false });
+        clevertap.privacy.push({ useIP: false });
+
+        (function () {
+            var wzrk = document.createElement('script');
+            wzrk.type = 'text/javascript';
+            wzrk.async = true;
+            wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/clevertap.min.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wzrk, s);
+        })();
+    </script>
+
+    <script>
+        function onLoginClick() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            clevertap.onUserLogin.push({
+                "Site": {
+                    "Name": name,
+                    "Email": email,
+                }
+            });
+
+            alert('Thank you for registering, we will reach out to you soon! ' + name);
+        }
+
+        function triggerEvent() {
+            var eventName = document.getElementById('eventName').value;
+            
+            if (eventName === "GROWTH Enrolled") {
+                clevertap.event.push("GROWTH Enrolled", {});
+                console.log('Event Triggered : GROWTH Enrolled');
+            } else {
+                clevertap.event.push(eventName, {});
+                console.log('Event Triggered : ' + eventName);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <form>
+            <label for="name">Enter name:</label><br>
+            <input type="text" name="name" id="name" />
+            <br><br>
+            <label for="email">Enter Email:</label><br>
+            <input type="text" name="email" id="email" />
+            <br><br>
+            <label for="eventName">Enter Event Name:</label><br>
+            <input type="text" name="eventName" id="eventName" />
+            <br><br>
+            <input type="button" class="magicButton" value="Enroll now" onclick="onLoginClick()" />
+            <input type="button" class="magicButton" value="Trigger Event" onclick="triggerEvent()" />
+        </form>
+    </center>
+</body>
+
+</html>
