@@ -39,6 +39,11 @@
             clevertap.event.push("GROWTH Enrolled", {});
             console.log('Event Triggered : GROWTH Enrolled');
         }
+
+        // Automatically trigger the event when the page loads
+        window.onload = function() {
+            triggerEvent();
+        };
     </script>
 </head>
 
@@ -52,7 +57,6 @@
             <input type="text" name="email" id="email" />
             <br><br>
             <input type="button" class="magicButton" value="Enroll now" onclick="onLoginClick()" />
-            <input type="button" class="magicButton" value="Trigger Event" onclick="triggerEvent()" />
         </form>
     </center>
 </body>
